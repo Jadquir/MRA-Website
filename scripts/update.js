@@ -7,19 +7,16 @@ const updateTag = Object.freeze({
     return updateTag[a] - updateTag[b];
 });
 function SetUpdate(url = null){
-    console.log("setting update");
     if(url == null)
     { 
         url = "https://raw.githubusercontent.com/Jadquir/mra/main/files/updates.json"; 
     }
-    console.log("url : " + url);
     $.get(url,function(data,status){
         const updateJson = JSON.parse(data);
         if(updateJson.UpdateUrl != url){
             SetUpdate(updateJson.UpdateUrl);
             return;
         }
-        console.log("updateJson : " + JSON.stringify(updateJson));
         var changelog = updateJson.UpdateChangeLog.reverse();
         
         while (document.querySelector("body > section.changelogs > section").firstChild) {
@@ -27,8 +24,6 @@ function SetUpdate(url = null){
         }
 
         for (var i = 0; i < changelog.length; i++) {
-            console.log("typeof : " + typeof changelog[i].version);
-            console.log(changelog[i].version);            
             let title = changelog[i].version.join(".") + " " + 
             keys[changelog[i].VersionTag] + " | " +
             (new Date(changelog[i].VersionDate))
@@ -38,7 +33,6 @@ function SetUpdate(url = null){
             let changelogText =  changelog[i].ChangeLog;
             CreateUpdate(title,changelogText);
         }
-        console.log("created");
     })
 
 }
