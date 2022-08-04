@@ -1,0 +1,15 @@
+{
+    "UpdateUrl": "https://raw.githubusercontent.com/Jadquir/jadquir.github.io/main/test.txt",
+    "DownloadLink": "https://www.youtube.com/",
+    "UpdateChangeLog": [
+      {
+        "version": [
+          0,
+          1
+        ],
+        "VersionDate": "2022-08-01T00:00:00",
+        "VersionTag": 0,
+        "ChangeLog": "- Alpha Testing."
+      }
+    ]
+  }
