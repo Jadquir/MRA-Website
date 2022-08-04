@@ -10,7 +10,7 @@ function SetUpdate(url = null){
     console.log("setting update");
     if(url == null)
     { 
-        url = "https://raw.githubusercontent.com/Jadquir/jadquir.github.io/main/test2.txt"; 
+        url = "https://raw.githubusercontent.com/Jadquir/mra/main/files/updates.json"; 
     }
     console.log("url : " + url);
     $.get(url,function(data,status){
