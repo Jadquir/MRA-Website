@@ -1,15 +1,24 @@
 {
     "UpdateUrl": "https://raw.githubusercontent.com/Jadquir/mra/main/files/updates.json",
     "DownloadLink": "https://jadquir.github.io/mra/files/MRA.zip",
-    "UpdateChangeLog": [
-      {
-        "version": [
-          0,
-          1
-        ],
-        "VersionDate": "2022-08-01T00:00:00",
-        "VersionTag": 0,
-        "ChangeLog": "- Alpha Testing."
-      }
-    ]
+   "UpdateChangeLog": [
+    {
+      "version": [
+        0,
+        1
+      ],
+      "VersionDate": "2022-07-025T00:00:00",
+      "VersionTag": 0,
+      "ChangeLog": "- Alpha Testing."
+    },
+    {
+      "version": [
+        0,
+        1
+      ],
+      "VersionDate": "2022-08-04T00:00:00",
+      "VersionTag": 1,
+      "ChangeLog": "- Public beta release."
+    }
+  ]
   }
