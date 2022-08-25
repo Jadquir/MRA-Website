@@ -1,7 +1,7 @@
 {
-    "UpdateUrl": "https://raw.githubusercontent.com/Jadquir/mra/main/files/updates.json",
-    "DownloadLink": "https://jadquir.github.io/mra/files/MRA.zip",
-   "UpdateChangeLog": [
+  "UpdateUrl": "https://github.com/Jadquir/mra-files/raw/main/MRA.zip",
+  "DownloadLink": "https://jadquir.github.io/mra/files/MRA.zip",
+  "UpdateChangeLog": [
     {
       "version": [
         0,
@@ -19,6 +19,15 @@
       "VersionDate": "2022-08-04T00:00:00",
       "VersionTag": 1,
       "ChangeLog": "- Public beta release."
+    },
+    {
+      "version": [
+        0,
+        11
+      ],
+      "VersionDate": "2022-08-25T00:00:00",
+      "VersionTag": 1,
+      "ChangeLog": "- Added loading indicator to update checker.\n- Fixed navigation not working on some computers.\n- Fixed Lyric Viewer's Font selection bug.\n- Fixed Tray Window UI Bug.\n- Fixed mouse back button bug.\n- Fixed error message.\n"
     }
   ]
-  }
+}
