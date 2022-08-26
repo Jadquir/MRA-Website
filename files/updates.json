@@ -1,5 +1,5 @@
 {
-  "UpdateUrl": "https://github.com/Jadquir/mra-files/raw/main/MRA.zip",
+  "UpdateUrl": "https://raw.githubusercontent.com/Jadquir/mra-files/main/updates.json",
   "DownloadLink": "https://jadquir.github.io/mra/files/MRA.zip",
   "UpdateChangeLog": [
     {
