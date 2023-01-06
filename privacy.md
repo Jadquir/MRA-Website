@@ -7,12 +7,12 @@ It hold the data in your local storage
 
 ## How to Contact Us 
 
-Contact us at jadquircontact@gmail.com or htttps://www.jadquir.xyz if you have any questions regarding this privacy policy. 
+Contact us at jadquircontact@gmail.com or www.jadquir.xyz if you have any questions regarding this privacy policy. 
 
  
 
 ## Changes to Our Privacy Policy 
-The publisher Ahmed Walid may modify or update this Privacy Policy from time to time to reflect changes in our app, and so you should review this page periodically. When we change the policy in a material manner we will let you know and update the ‘last modified’ date at the bottom of this page. 
+The publisher Jadquir may modify or update this Privacy Policy from time to time to reflect changes in our app, and so you should review this page periodically. When we change the policy in a material manner we will let you know and update the ‘last modified’ date at the bottom of this page. 
 
 ---
 This privacy policy was last modified on January 6th, 2023. 
