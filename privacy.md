@@ -7,7 +7,7 @@ It hold the data in your local storage
 
 ## How to Contact Us 
 
-Contact us at jadquircontact@gmail.com or www.jadquir.xyz if you have any questions regarding this privacy policy. 
+Contact us at jadquircontact@gmail.com or www.jadquir.xyz/pages/mra if you have any questions regarding this privacy policy or the product. 
 
  
 
