@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is a Spotify integration callback page for MRA."
+    />
+    <meta name="theme-color" content="#2657ea" />
+    <meta
+      name="keywords"
+      content="Emircan, jadquir, Gezer, United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Recognition Application, Shazam, "
+    />
+    <title>MRA Spotify Integration - Jadquir</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/nav.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/button.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/common.css" />
+    <script src="https://jadquir.com/scripts/navbar.js" type="text/javascript" defer></script>
+    <link rel="icon" type="image/gif/png" href="images/logo.png" />
+    <link itemprop="image" href="images/logo.png" />
+  </head>
+  <body onload="loadEvent()" style="background-image: none">
+    <header class="primary-header flex" id="navContainer">
+      <div class="holder1">
+        <a href="https://jadquir.xyz/" class="logo"></a>
+        <button
+          class="nav-toggle no-button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="https://jadquir.xyz/" class="nav"> Home </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.xyz/#about" class="nav"> About Me </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.xyz/#works" class="nav"> My Works </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.xyz/#contact" class="nav"> Contact </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="mra-container">
+      <h1 id="title">
+        MRA successfully linked to
+        <span style="color: #1db954; font-weight: 700;">Spotify</span>.
+      </h1>
+      <span id="sub-text" class="sub-text"> You can close this page now. </span>
+    </section> <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Jadquir" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  
+    <footer style="margin-top: 25px">
+      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      reserved.
+    </footer>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      if (urlParams.has("error")) {
+        document.getElementById("title").innerHTML =
+          "MRA <span style='color: #d83535; font-weight: 700;'>failed</span> to link to <span style='color: #1DB954; font-weight: 700;'>Spotify</span>.";
+        document.getElementById("sub-text").innerHTML =
+          "You can close this page now.";
+      }
+    </script>
+    <style>
+      .mra-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh !important;
+        margin-bottom: 1vh;
+        height: auto !important;
+        overflow: hidden;
+      }
+
+      .mra-container h1 {
+        color: white !important;
+        font-size: 50px !important;
+        font-weight: 600;
+        text-align: center !important;
+        margin-top: 50px !important;
+      }
+
+      .mra-container .sub-text {
+        color: rgb(181, 181, 181) !important;
+        font-size: 17px !important;
+        text-align: center !important;
+        font-weight: 500;
+        margin-bottom: 100px !important;
+      }
+    </style>
+  </body>
+</html>

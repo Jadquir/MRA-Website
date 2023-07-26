@@ -1,25 +1,317 @@
 <!DOCTYPE html>
-<html>
-    <header>
-        <title>MRA</title>
-    </header>
-    <body>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/page/index.css">
-        <ul class="navMenu">
-            <a href="./index.html">Home</a>
-            <a href="pages/about.html">About</a>
-            <a href="pages/download.html">Download</a>
-            <a href="pages/contact.html">Contact</a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/nav.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/button.css" />
+    <link rel="stylesheet" type="text/css" href="https://jadquir.com/style/common.css" />
+    <script src="https://jadquir.com/scripts/navbar.js" type="text/javascript" defer></script>
+    <link rel="icon" type="image/gif/png" href="images/logo.png" />
+    <link itemprop="image" href="images/logo.png" />
+    <title>MRA - Jadquir</title>
+    <meta
+      name="description"
+      content="MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.
+    MRA listens to your microphone or the desktop sound and identifies the music and then gives you information about the music you found like title, artist, album, genre, etc. You can listen to the music on different platforms, see lyrics, see similar kinds of music, and much more."
+    />
+    <meta name="theme-color" content="#2657ea" />
+    <meta
+      name="keywords"
+      content="
+      MRA, 
+      Music Identifier, 
+      Music Recognition,
+      Music Recognition Application, 
+      Shazam, 
+      Shazam client for PC,
+      mra music,
+      music recognition api,
+      music downloders,
+      mra - music identifier - music discovery,
+      mra - music identifier,
+      mra - music discovery,
+
+      Music identification software,
+      Audio recognition app,
+      PC music search tool,
+      Song recognition for desktop,
+      Music discovery application,
+      Desktop audio identification,
+      Microphone-based music search,
+      PC app for identifying songs,
+      Sound recognition software,
+      Free, 
+      Emircan,
+      jadquir,
+      Gezer,
+      Emircan Gezer, 
+      Jadquir,
+      Emircan Jadquir Gezer,
+       Applications, 
+       United Adobe Editor, 
+       Photoshop Splash Screen Changer, 
+       Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk"
+    />
+  
+    <script
+      src="shazam_redirect.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <header class="primary-header flex" id="navContainer">
+      <div class="holder1">
+        <a href="https://jadquir.com" class="logo"></a>
+        <button
+          class="nav-toggle no-button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="https://jadquir.com/"> Home </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#about"> About Me </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#works"> My Works </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#contact"> Contact </a>
+          </li>
         </ul>
-        <section class="mainTitle">
-            <header class="title">MRA</header>
-            <div class="subtitle">
-                (Music Recognition Application)
-            </div>
-            
-            <button onclick="this.children[0].click();"><a href="pages/about.html">Learn More</a>  </button>
-        </section>
-      
-        <footer>© 2022 Jadquir</footer>
+      </nav>
+    </header>
+    <main>
+      <section class="landing">
+        <div class="details">
+          <div class="text">
+            <h1>MRA - Music identifier - Music Recognition</h1>
+            <span
+              >MRA (short for Music Recognition Application) is a music
+              recognition application, or music identifier, like Shazam but for
+              PC.
+              <br />
+              MRA listens to your microphone or the desktop sound and identifies
+              the music
+              <br />and then gives you information about the music you found
+              like title, artist, album, genre, etc. You can listen to the music
+              on different platforms, see lyrics, see similar kinds of music,
+              and much more.</span
+            >
+          </div>
+          <div class="download-container">
+            <a href="#download" class="button accent primary download-button"
+              >Download Now</a
+            >
+          </div>
+        </div>
+        <div class="container"></div>
+        <div class="image">
+          <div class="slider">
+            <ul class="images">
+              <li>
+                <img class="slider-image" src="images/screenshots/1.png" />
+              </li>
+              <li>
+                <img class="slider-image" src="images/screenshots/2.png" />
+              </li>
+              <li>
+                <img class="slider-image" src="images/screenshots/3.png" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <script>
+          let currentSlide = 0;
+          let imageCount = document.querySelectorAll(".slider-image");
+          let images = document.querySelector(".images");
+
+          function getWidth() {
+            return document.querySelector(".slider-image").offsetWidth;
+          }
+          function nextSlide() {
+            if (currentSlide === imageCount.length - 1) {
+              currentSlide = 0;
+            } else {
+              currentSlide++;
+            }
+            images.style.transform = `translateX(-${
+              currentSlide * getWidth()
+            }px)`;
+          }
+
+          function previousSlide() {
+            if (currentSlide === 0) {
+              currentSlide = imageCount.length - 1;
+            } else {
+              currentSlide--;
+            }
+            images.style.transform = `translateX(-${
+              currentSlide * getWidth()
+            }px)`;
+          }
+
+          setInterval(() => {
+            nextSlide();
+          }, 5000);
+        </script>
+      </section>
+
+      <section class="downloads" id="download">
+        <h1>Downloads</h1>
+        <div class="download-container">
+          <span class="recom-text">* is Recommended</span>
+          <div class="download-button">
+            <span class="download-text">Microsoft Store:</span>
+            <script
+              type="module"
+              src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
+            ></script>
+            <ms-store-badge productid="XP8BSVRXS65HH1" theme="light">
+            </ms-store-badge>
+          </div>
+          <!--           
+          <div class="download-button">
+            <span class="download-text"
+              >Windows:</span
+            >
+            <a href="https://jadquir.xyz/pages/mra/files/downloads/1.03.1/MRA_Installer.msi" class="button accent primary margin" download>Download</a
+            >
+          </div> -->
+          <div class="download-button">
+            <span class="download-text"
+              >*Windows 64-bit (With Auto Updater):</span
+            >
+            <a
+              href="downloads/1.05/64/MRA_Setup.msi"
+              class="button accent primary margin download-link"
+              target="_blank"
+              >Download</a
+            >
+            <!-- <a href="#" class="button accent transparent" download
+              >Download Zip</a
+            > -->
+          </div>
+
+          <div class="download-button">
+            <span class="download-text">Windows 32-bit :</span>
+            <a
+              href="downloads/1.05/32/MRA_Setup.msi"
+              class="button accent primary margin download-link"
+              target="_blank"
+              >Download</a
+            >
+            <!-- <a href="#" class="button accent transparent" download
+              >Download Zip</a
+            > -->
+          </div>
+          <script defer>
+            const elements = document.querySelectorAll(
+              ".download-button > .download-text"
+            );
+            let maxWidth = 0;
+            const len = elements.length;
+
+            for (let element of elements) {
+              const elementWidth = element.offsetWidth;
+              maxWidth = Math.max(maxWidth, elementWidth);
+            }
+
+            for (let element of elements) {
+              element.style.minWidth = `${maxWidth}px`;
+            }
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <div class="dialog">
+      <div class="dialog-container">
+        <div class="close-btn">
+          <div id="hamburger" class="animate">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+        <script>
+          window.addEventListener("load", () => {
+            const hamburger = document.querySelector(".close-btn");
+            const dialog = document.querySelector(".dialog");
+            const downloadLinks = document.querySelectorAll(".download-link");
+
+            hamburger.addEventListener("click", () => {
+              dialog.classList.toggle("open");
+            });
+
+            downloadLinks.forEach((element) => {
+              element.addEventListener("click", () => {
+                dialog.classList.toggle("open");
+              });
+            });
+          });
+        </script>
+        <h2>Thank you for downloading our app!</h2>
+        <span class="text"
+          >If you find it valuable, please consider supporting us by making a
+          donation. Your contribution helps us maintain and improve the app for
+          a better user experience.
+        </span>
+        <script
+          type="text/javascript"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+          data-name="bmc-button"
+          data-slug="Jadquir"
+          data-color="#5F7FFF"
+          data-emoji=""
+          data-font="Poppins"
+          data-text="Buy me a coffee"
+          data-outline-color="#000000"
+          data-font-color="#ffffff"
+          data-coffee-color="#FFDD00"
+        ></script>
+      </div>
+    </div>
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="Jadquir"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#5F7FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+    <footer>
+      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      reserved.
+    </footer>
+  </body>
 </html>
