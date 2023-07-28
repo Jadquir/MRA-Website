@@ -74,7 +74,7 @@
 
 .info-text {
     font-weight: 700;
-    color: aliceblue;
+    color: aliceblue;    max-width: 450px;
 }
 
 @media (max-width: 1060px) {
@@ -123,9 +123,11 @@
 }
 
 .external-link-svg {
-    width: 30px;
-    height: 30px;
     margin-right: 10px;
+    
+    --w: 30px;
+    width: var(--w);
+    height: var(--w);
 }
 
 .external-link-svg path {
@@ -165,3 +167,9 @@
     animation:s3 1s infinite linear;
   }
   @keyframes s3 {to{transform: rotate(1turn)}}
+
+  a:not(.button):not(.card):hover {
+    color: rgb(255, 255, 255)  !important;
+}a:not(.button):not(.card) {
+    color: rgb(203, 207, 238) !important;
+}

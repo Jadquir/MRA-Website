@@ -19,10 +19,10 @@ async function getObjectFromHttpGet(url) {
     }
   }const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function get_music(id) {
+async function get_playlist(id) {
  
   try {
-    return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
+    return await getObjectFromHttpGet(`http://127.0.0.1:5001/mra-musicidentifier/us-central1/get_playlist_site?playlistId=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -51,18 +51,24 @@ function GetImagePath(MusicImageLink, newSize) {
     var lowFileName = lastPart.replaceAll(size, newSize.toString());
     return baseUrl + lowFileName;
   }
-async function get_music_detail() {
+async function get_playlist_detail() {
   const urlParams = new URLSearchParams(window.location.search);
   const music_id = urlParams.get("id");
   if (music_id === null || music_id.length === 0) {
     return null;
   }
-  let music = await get_music(music_id);
-  if(music === null){
+  let response = await get_playlist(music_id);
+  if(response === undefined|| response === null){
+    return null
+  } 
+  if(response.success === null || response.success === false ){
     return null
   }
-  music.Images = GetImagePath(music.Images, 400);
-  return music;
+  const  playlist=  response.playlist;
+
+
+  playlist.Thumbnail = GetImagePath(playlist.Thumbnail, 400);
+  return playlist;
 }
 
 function resize_titles() {
@@ -125,10 +131,10 @@ function fade_out(){
   const overlay = document.querySelector('.mra-overlay');
   overlay.classList.add('closed');
 }
-function updateUI(music){
-    console.log(music);
+function updateUI(playlist){
+    console.log(playlist);
     const main = document.querySelector("#main");
-    if (music === null) {
+    if (playlist === null) {
       main.innerHTML = "<h1>Something went wrong!</h1>";
       fade_out();
       return;
@@ -136,14 +142,33 @@ function updateUI(music){
     const image = document.querySelector(".music_image");
     const details = document.querySelector(".details");
     const openmra = document.querySelector("#open-mra-href");
-    openmra.setAttribute("href",`mra://music/${music.Id}`)
+    openmra.setAttribute("href",`mra://playlist/${playlist.playlistId}`)
   
-    const image_src = (music === null || music.Images === null ||music.Images.length ===0) ? "./images/default.png" : music.Images;
+    const image_src = (playlist === null || playlist.Thumbnail === null ||playlist.Thumbnail.length ===0) ? "./images/default.png" : playlist.Thumbnail;
     image.setAttribute("src", image_src);
 
     $("#bg-image").css("background-image",`url("${image_src}")`);
-  
-    function create_info(title, value) {
+    function whitenHexColor(hexColor, amount) {
+      // Remove the '#' symbol if present
+      hexColor = hexColor.replace('#', '');
+    
+      // Convert the hex color to an RGB representation
+      const red = parseInt(hexColor.substring(0, 2), 16);
+      const green = parseInt(hexColor.substring(2, 4), 16);
+      const blue = parseInt(hexColor.substring(4, 6), 16);
+    
+      // Adjust the RGB values to lighten the color
+      const whitenRed = Math.min(255, red + amount);
+      const whitenGreen = Math.min(255, green + amount);
+      const whitenBlue = Math.min(255, blue + amount);
+    
+      // Convert the new RGB values back to a hex color
+      const whitenHexColor = `#${(whitenRed << 16 | whitenGreen << 8 | whitenBlue).toString(16).padStart(6, '0')}`;
+    
+      return whitenHexColor;
+    }
+    function create_info(title, value,color,isOverflow) {
+
       // Create the parent div element
       var parentDiv = document.createElement("div");
       parentDiv.className = "info-parent";
@@ -154,14 +179,23 @@ function updateUI(music){
       titleSpan.textContent = title;
   
       // Create the text span element
-      var textSpan = document.createElement("div");
-      textSpan.className = "info-sep";
-      textSpan.textContent = ":";
-  
-      // Create the text span element
       var textSpan = document.createElement("span");
       textSpan.className = "info-text";
       textSpan.textContent = value;
+      
+      if(color !== undefined  && color !== null){
+        const color1 = "#" + color;
+        textSpan.classList.add("glowing-text"),
+        textSpan.style.setProperty("--text-color", whitenHexColor(color1,50));
+        textSpan.style.setProperty("--glow-color", color1);
+      }
+      
+      if(isOverflow !== undefined  && isOverflow !== null){
+        if(isOverflow ===  true){
+
+          textSpan.style.overflowY  =  "auto";
+        }
+      }
   
       if (value == null || value.length === 0) {
         parentDiv.style.display = "none";
@@ -186,39 +220,53 @@ function updateUI(music){
     }
   
     details.innerHTML = "";
-    details.appendChild(create_title(music.Title));
-    details.appendChild(create_info("Artist", music.Artist));
-    details.appendChild(create_info("Album", music.Album));
-    details.appendChild(create_info("Genre", music.Genre));
-    details.appendChild(create_info("Release Year", music.ReleaseYear));
+    details.appendChild(create_title(playlist.Title));
+    details.appendChild(create_info("Description:", playlist.Description,null,true));
+    details.appendChild(create_info("Created By:", playlist.OwnerName,playlist.OwnerColor));
+    details.appendChild(create_info("Music Amount", playlist.MusicAmount));
     
     fade_out();
 }
 
-get_music_detail().then(function (result) {
-  const music = result;
-  if (music === null) {
-    setMetaTags(
-      "Something went wrong!",
-      "",
-      "https://mra.jadquir.com/images/logo.png"
-    );
-  } else {
-    setMetaTags(
-      `${music.Title} by ${music.Artist} - MRA - Jadquir`,
-      "MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.",
-      music.Images
-    );
-  }
- // Check if the page has already loaded
- if (document.readyState === 'complete') {
-    // If the page has loaded, update the UI immediately
-    updateUI(music);
-  } else {
-    // If the page is still loading, wait for it to finish
-    $(document).ready(function() {
-      updateUI(music);
-    });
-  }
+// get_playlist_detail().then(function (result) {
+//   const music = result;
+//   if (music === null) {
+//     setMetaTags(
+//       "Something went wrong!",
+//       "",
+//       "https://mra.jadquir.com/images/logo.png"
+//     );
+//   } else {
+//     setMetaTags(
+//       `${music.Title} by ${music.OwnerName} - MRA - Jadquir`,
+//       "MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.",
+//       music.Images
+//     );
+//   }
+//  // Check if the page has already loaded
+//  if (document.readyState === 'complete') {
+//     // If the page has loaded, update the UI immediately
+//     updateUI(music);
+//   } else {
+//     // If the page is still loading, wait for it to finish
+//     $(document).ready(function() {
+//       updateUI(music);
+//     });
+//   }
 
-});
+// });
+const  p  =  {
+  Description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu\r\n",
+MusicAmount: 1,
+OwnerColor: "ff8b40",
+OwnerName: "Jadquir",
+Thumbnail: "https://is3-ssl.mzstatic.com/image/thumb/Music116/v4/87/39/67/873967ea-fb2e-390c-31f2-7db946ede0cd/cover.jpg/400x400cc.jpg",
+Title: "custom  1",
+playlistId: "4voe6ca0m2Z"
+}
+if (document.readyState === 'complete') 
+  updateUI(p);
+else {
+$(document).ready(function() {
+  updateUI(p);
+});}

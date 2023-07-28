@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="This is the song share page for MRA. Click the link to see the song. MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC."
+      content="This is the playlist share page for MRA. Click the link to see the playlist. MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC."
     />
     <meta name="theme-color" content="#2657ea" />
     <meta
@@ -23,8 +23,7 @@
     <script src="https://jadquir.com/scripts/navbar.js" type="text/javascript" defer></script>
     <link rel="icon" type="image/gif/png" href="./images/logo.png" />
     <link itemprop="image" href="./images/logo.png" />
-    <meta property="og:description" content="This is the song share page for MRA - Music Identifier - Music Discovery. Click the link to see the song. MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.
-    MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.">
+    <meta property="og:description" content="This is the playlist share page for MRA. Click the link to see the playlist. MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.">
     <meta property="og:image" content="./images/logo.png">
     <meta property="og:url" content="https://mra.jadquir.com">
     <meta property="og:type" content="website">
@@ -75,7 +74,8 @@
         <section id="main">
             <img class="music_image" src=""></img>
             <div class="detail-parent">
-                <div class="details"></div>
+                <div class="details">                  
+                </div>
                 <div class="buttons">
                     <a class="button open-mra accent" id="open-mra-href" >
                         <svg class="external-link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
@@ -97,7 +97,16 @@
             </div>
         </section>
     </div>
-    
+    <style>
+      .details{
+        gap: 3px;
+      } 
+      .info-text{
+         max-height: 70px;
+        /* overflow-y: auto */
+        ;
+      }
+    </style>
     <div class="mra-overlay">
       <div class="custom-loader"></div>
       <h1>Please wait..</h1>    
@@ -109,6 +118,6 @@
       reserved.
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="shazam.js"></script>   
+    <script src="playlist.js"></script>   
   </body>
 </html>
