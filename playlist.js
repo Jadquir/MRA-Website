@@ -144,7 +144,7 @@ function updateUI(playlist){
     const openmra = document.querySelector("#open-mra-href");
     openmra.setAttribute("href",`mra://playlist/${playlist.playlistId}`)
   
-    const image_src = (playlist === null || playlist.Thumbnail === null ||playlist.Thumbnail.length ===0) ? "./images/default.png" : playlist.Thumbnail;
+    const image_src = (playlist === null || playlist.Thumbnail === null ||playlist.Thumbnail.length ===0) ? "../images/default.png" : playlist.Thumbnail;
     image.setAttribute("src", image_src);
 
     $("#bg-image").css("background-image",`url("${image_src}")`);

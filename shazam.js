@@ -138,7 +138,7 @@ function updateUI(music){
     const openmra = document.querySelector("#open-mra-href");
     openmra.setAttribute("href",`mra://music/${music.Id}`)
   
-    const image_src = (music === null || music.Images === null ||music.Images.length ===0) ? "./images/default.png" : music.Images;
+    const image_src = (music === null || music.Images === null ||music.Images.length ===0) ? "../images/default.png" : music.Images;
     image.setAttribute("src", image_src);
 
     $("#bg-image").css("background-image",`url("${image_src}")`);
