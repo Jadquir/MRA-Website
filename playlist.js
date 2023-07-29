@@ -221,8 +221,8 @@ function updateUI(playlist){
   
     details.innerHTML = "";
     details.appendChild(create_title(playlist.Title));
-    details.appendChild(create_info("Description:", playlist.Description,null,true));
-    details.appendChild(create_info("Created By:", playlist.OwnerName,playlist.OwnerColor));
+    details.appendChild(create_info("Description", playlist.Description,null,true));
+    details.appendChild(create_info("Created By", playlist.OwnerName,playlist.OwnerColor));
     details.appendChild(create_info("Music Amount", playlist.MusicAmount));
     
     fade_out();
