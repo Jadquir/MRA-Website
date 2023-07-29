@@ -22,7 +22,7 @@ async function getObjectFromHttpGet(url) {
 async function get_playlist(id) {
  
   try {
-    return await getObjectFromHttpGet(`http://127.0.0.1:5001/mra-musicidentifier/us-central1/get_playlist_site?playlistId=${id}`);
+    return await getObjectFromHttpGet(`https://get-playlist-site-vh7xzcelwq-uc.a.run.app?playlistId=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -228,45 +228,28 @@ function updateUI(playlist){
     fade_out();
 }
 
-// get_playlist_detail().then(function (result) {
-//   const music = result;
-//   if (music === null) {
-//     setMetaTags(
-//       "Something went wrong!",
-//       "",
-//       "https://mra.jadquir.com/images/logo.png"
-//     );
-//   } else {
-//     setMetaTags(
-//       `${music.Title} by ${music.OwnerName} - MRA - Jadquir`,
-//       "MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.",
-//       music.Images
-//     );
-//   }
-//  // Check if the page has already loaded
-//  if (document.readyState === 'complete') {
-//     // If the page has loaded, update the UI immediately
-//     updateUI(music);
-//   } else {
-//     // If the page is still loading, wait for it to finish
-//     $(document).ready(function() {
-//       updateUI(music);
-//     });
-//   }
-
-// });
-const  p  =  {
-  Description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu\r\n",
-MusicAmount: 1,
-OwnerColor: "ff8b40",
-OwnerName: "Jadquir",
-Thumbnail: "https://is3-ssl.mzstatic.com/image/thumb/Music116/v4/87/39/67/873967ea-fb2e-390c-31f2-7db946ede0cd/cover.jpg/400x400cc.jpg",
-Title: "custom  1",
-playlistId: "4voe6ca0m2Z"
-}
-if (document.readyState === 'complete') 
-  updateUI(p);
-else {
-$(document).ready(function() {
-  updateUI(p);
-});}
+get_playlist_detail().then(function (result) {
+  const music = result;
+     if (music === null) {
+    setMetaTags(
+      "Something went wrong!",
+      "",
+      "https://mra.jadquir.com/images/logo.png"
+    );
+  } else {
+    setMetaTags(
+      `${music.Title} by ${music.OwnerName} - MRA - Jadquir`,
+      "MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.",
+      music.Images
+    );
+  }
+ // Check if the page has already loaded
+ if (document.readyState === 'complete') {
+    // If the page has loaded, update the UI immediately
+    updateUI(music);
+  } else {
+    // If the page is still loading, wait for it to finish
+    $(document).ready(function() {
+      updateUI(music);
+    });
+  }});
