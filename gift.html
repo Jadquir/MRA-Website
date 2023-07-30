@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="You have a gift! You will have access to MRA supporter features for free!"
+    />
+    <meta name="theme-color" content="#2657ea" />
+    <meta
+      name="keywords"
+      content="Emircan, jadquir, Gezer, United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Recognition Application, Shazam"
+    />
+    <title>MRA - Gift</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/gift.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://jadquir.com/style/nav.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://jadquir.com/style/button.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://jadquir.com/style/common.css"
+    />
+    <script
+      src="https://jadquir.com/scripts/navbar.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <link rel="icon" type="image/gif/png" href="./images/logo.png" />
+    <link itemprop="image" href="./images/logo.png" />
+    <meta
+      property="og:description"
+      content="This is the song share page for MRA - Music Identifier - Music Discovery. Click the link to see the song. MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.
+    MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC."
+    />
+    <meta property="og:image" content="./images/logo.png" />
+    <meta property="og:url" content="https://mra.jadquir.com" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body style="background-image: none">
+    <header
+      class="primary-header flex"
+      id="navContainer"
+      style="
+        text-shadow: 0px 0px 4px black, 3px 6px 20px black, 0px 0px 11px black,
+          0px 0px 20px black;
+      "
+    >
+      <div class="holder1">
+        <a href="https://jadquir.com/" class="logo"></a>
+        <button
+          class="nav-toggle no-button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="https://jadquir.com/" class="nav"> Home </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#about" class="nav"> About Me </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#works" class="nav"> My Works </a>
+          </li>
+
+          <li>
+            <a href="https://jadquir.com/#contact" class="nav"> Contact </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="bg-image"></div>
+    <section class="main-container">
+      <div id="gift-contaner">
+        <span>You have a gift!</span>
+        <span id="gifts">You will get Tier 1 for 31 days!</span>
+        <form id="claim_form">
+          <div class="textbox">
+            <div class="text">Your MRA Email</div>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="example@domain.com"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            id="submit_button"
+            class="accent colored"
+            style="
+              --accent: #16ff48;
+              --accent-09: #16ff48;
+              --accent-darker: hsl(133, 100%, 44%);
+              --hover-text: #37373b;
+              width: fit-content;
+              align-self: center;
+            "
+          >
+            Claim Gift
+          </button>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-bar-value"></div>
+        </div>
+        <span id="error_text" class="glow">Error will be shown like this</span>
+        <dialog id="dialog"></dialog>
+      </div>
+    </section>
+    <div class="mra-overlay">
+      <div class="custom-loader"></div>
+      <h1>Please wait..</h1>
+    </div>
+    <!-- Dialog element -->
+    <dialog id="congratulationsDialog">
+      <!-- Dialog content -->
+      <div class="dialog-content">
+        <p>Congratulations! You claimed the gift</p>
+        <button
+          class="accent colored"
+          style="width: fit-content; align-self: center"
+          onclick="closeCongratulationsDialog()"
+        >
+          Close
+        </button>
+      </div>
+    </dialog>
+    <!-- <div class="mra-overlay">
+      <div class="custom-loader"></div>
+      <h1>Please wait..</h1>    
+    </div> -->
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="Jadquir"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#5F7FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+
+    <footer style="margin-top: 25px">
+      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      reserved.
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="gift.js"></script>
+
+  </body>
+</html>

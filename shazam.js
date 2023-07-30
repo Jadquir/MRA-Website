@@ -1,4 +1,4 @@
-async function getObjectFromHttpGet(url) {
+async function getObjectFromHttpPost(url) {
     try {
       const response = await fetch(url, {
         mode: 'cors',
@@ -22,7 +22,7 @@ async function getObjectFromHttpGet(url) {
 async function get_music(id) {
  
   try {
-    return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
+    return await getObjectFromHttpPost(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
