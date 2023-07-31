@@ -108,7 +108,6 @@ async function logSubmit(event){
     await claim_gift(postData);
 
 }
-giftInfo.innerHTML = "";
 form.addEventListener('submit', logSubmit);
 get_gift_info().then(gift_data =>{
     if(gift_data === null) {
