@@ -17,7 +17,6 @@ function fade_out() {
 
 async function getObjectFromHttpPost(url,body) {
     try {
-        console.log(body);
       const response = await fetch(url, {
         mode: "cors",
         method: "POST", // Set the HTTP method to POST
@@ -26,7 +25,6 @@ async function getObjectFromHttpPost(url,body) {
           Origin: "https://jadquir.com/",
         },
       });
-  console.log(response);
       if (!response.ok) {
         throw new Error("HTTP request failed");
       }
@@ -65,7 +63,6 @@ async function get_gift_info() {
   const info = await getObjectFromHttpget(
     `https://get-gift-info-vh7xzcelwq-uc.a.run.app?gift_code=${code}`
   );
-console.log("info",info);
   if (info === undefined || info == null) {
     error("Invalid Gift Code");
     return null;
@@ -145,7 +142,9 @@ function activate_form(){    isClaimInProgress = false;
 }
 async function claim_gift(post_data){
     disable_form();
-    const a = await getObjectFromHttpPost("https://claim-gift-vh7xzcelwq-uc.a.run.app",post_data);
+    const a = await getObjectFromHttpPost(
+      "https://claim-gift-vh7xzcelwq-uc.a.run.app"      
+      ,post_data);
     if(a === undefined ||a == null){
         claim_error("Something went wrong!");
         activate_form();
