@@ -115,6 +115,7 @@ section {
     gap: 20px;
     margin-bottom: 20px;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .visibleArea {
@@ -310,6 +311,25 @@ section {
 
 }
 
+@media (max-width: 55em){
+body {
+    width: 100% !important;
+    margin-left: 0px!important;
+}
+.landing .details .text{
+    
+    margin: 0px 2rem !important;
+}
+.landing .details .download-container {
+    justify-content: center !important;
+}
+.landing .details .download-container a {
+    width: 100% !important;
+}
+.tier-card{
+    width: 42vh !important;
+}
+}
 .recom-text {
     text-align: center;
 
