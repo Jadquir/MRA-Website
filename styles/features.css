@@ -1,0 +1,117 @@
+.feature-parent {
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+    gap: 25px;
+    /* min-width: var(--max-feature-width); */
+    width: 78vw;
+    /* height: 32rem; */
+    max-width: 1800px;
+}
+
+.feature-holder {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.feature-parent.odd {
+    flex-direction: row;
+}
+
+.feature-parent.even {
+    flex-direction: row-reverse;
+}
+
+.feature-parent.even .feature-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.feature-info {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 38vw; */
+
+    width: 100%;
+}
+
+.feature-info ul {
+    list-style-type: '⭐ ';
+}
+
+.feature-info h2 {
+    font-size: 1.9em;
+
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#features h1,
+#tiers h1{
+
+    font-size: 55px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* .feature-parent.odd::before {
+    content: '';
+    position: absolute;
+    /* width: 120%; 
+    width: inherit;
+    height: inherit; 
+    /* height: 29.04rem; 
+    /* left: -10%; 
+	aspect-ratio:1/1;
+    z-index: -9;
+    background-color: cyan;
+    /* background-color: #d1e3e305; 
+} */
+
+@media (prefers-color-scheme: light) {
+
+    /* .feature-parent.odd::before {
+        background-color: #171a1a08;
+    } */
+}
+
+@media (max-width: 1400px) {
+/*     
+
+.feature-parent.odd::before {
+    /* height: 70vw; 
+} */
+    .feature-parent {
+        flex-direction: column !important;
+        width: 95%;
+        margin-bottom: 59px;
+    }
+
+    /* .feature-slider {
+        width: 100% !important;
+    } */
+.feature-image{
+    align-self: center;
+}
+
+    #features h1,
+    #tiers h1 {
+        text-align: center;
+    }
+
+    .feature-info ul {
+        width: 80%;
+    }
+
+    .feature-info {
+        margin-bottom: 40px;
+        margin-top: -60px;
+        align-items: flex-start !important;
+    }
+}
