@@ -3,11 +3,4 @@
 .rmv/config/log4j2.properties
 .rmv/documentation/UNIVERSE/custom.json
 .rmv/logs/rocket_mv_basic_language_server.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-03-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-05-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-09-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-11-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-13-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-14-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-21-1.log
-.rmv/logs/backup/rocket_mv_basic_language_server.2023-10-28-1.log
+.rmv/*
