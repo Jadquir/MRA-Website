@@ -684,10 +684,37 @@
               target="_blank"
               >Download</a
             > -->
+            <script>
+              var currentUrl =
+                "https://mra.jadquir.com/downloads/1.07.1/MRA_Setup.msi";
+              const fetchUrl =
+                "https://raw.githubusercontent.com/Jadquir/mra-files/main/updates.json";
+              fetch(fetchUrl).then(async (data) => {
+                const json = await data.json();
+                const fetched = json.WebsiteDownloadUrl;
+                if (fetched && fetched != null && fetched.length != 0) {
+                  currentUrl = fetched;
+                }
+                function setUrl() {
+                  const link = document.getElementById("download-url");
+                  link.setAttribute("href", currentUrl);
+                }
+                if (document.readyState === "complete") {
+                  setUrl();
+                } else {
+                  document.onreadystatechange = () => {
+                    if (document.readyState === "complete") {
+                      setUrl();
+                    }
+                  };
+                }
+              });
+            </script>
             <a
               class="button accent primary download-link icon-button stroked"
               target="_blank"
-              href="https://jadquir.com/mra/downloads/1.07/MRA_Setup.msi"
+              id="download-url"
+              href="https://mra.jadquir.com/downloads/1.07.1/MRA_Setup.msi"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
