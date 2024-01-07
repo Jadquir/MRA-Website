@@ -11,6 +11,9 @@
     --accent-darker: #1c45b5;
     --card-glow: 0px 0px 10px var(--accent);
 
+    --error: #EA2E2E;
+    --success: #7BDF49;
+    --warning: #F3BA58;
 
     --size-1: 25px;
     --size-2: 60px;
@@ -362,6 +365,7 @@ body {
 
     font-size: large;
     font-weight: 500;
+    margin: 0px 20px;
 }
 
 .slider-image {
@@ -388,6 +392,7 @@ section.downloads .download-container {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    align-items: center;
 }
 
 .download-button {
