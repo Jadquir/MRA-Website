@@ -1,3 +1,9 @@
+let readyState = 'loading';
+Object.defineProperty(document, 'readyState', {
+    get() { return readyState },
+    set(value) { return readyState = value },
+});
+
 async function getObjectFromHttpPost(url) {
     try {
       const response = await fetch(url, {
@@ -22,6 +28,10 @@ async function getObjectFromHttpPost(url) {
 async function get_music(id) {
  
   try {
+    if (id === null || id.trim() === "") {
+      return null;
+    }
+
     return await getObjectFromHttpPost(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
   } catch (error) {
     // Handle errors
@@ -189,12 +199,11 @@ function updateUI(music){
     details.appendChild(create_title(music.Title));
     details.appendChild(create_info("Artist", music.Artist));
     details.appendChild(create_info("Album", music.Album));
-    details.appendChild(create_info("Genre", music.Genre));
+    details.appendChild(create_info("Genre", music.Genres?.join(' ')));
     details.appendChild(create_info("Release Year", music.ReleaseYear));
     
     fade_out();
 }
-
 get_music_detail().then(function (result) {
   const music = result;
   if (music === null) {
@@ -221,4 +230,4 @@ get_music_detail().then(function (result) {
     });
   }
 
-});
+})
