@@ -53,11 +53,10 @@
 #features h1,
 #tiers h1{
 
-    font-size: 55px;
+    font-size: 45px;
     font-weight: bold;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 /* .feature-parent.odd::before {

@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" href="styles/features.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://jadquir.com/style/button.css"
-    />
+    <link rel="stylesheet" type="text/css" href="new_styles/button.css" />
+    <link rel="stylesheet" type="text/css" href="new_styles/main.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://jadquir.com/style/common.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://jadquir.com/style/button.css"
     />
     <script
       src="https://jadquir.com/scripts/navbar.js"
@@ -502,7 +504,10 @@
         <div class="tier-holder">
           <div
             class="tier-card"
-            style="--color: #ff3e7fca; --darker-color: #ff9589ca"
+            style="
+            --color: #ff3e7fca; 
+            --darker-color: #ff3e7f3b;
+            "
           >
             <div class="tier-title-holder">
               <img
@@ -510,25 +515,32 @@
                 alt="MRA Supporter Features Tier 1"
                 src="https://cdn.buymeacoffee.com/uploads/membership_level/2023/07/T6QIz2SFhKP2BiGx9yc6lJXMTOcKIsZRMwklFJjP.png@800w_0e.jpg"
               />
-              <h1 class="tier-title">Tier 1</h1>
+              <h1 class="tier-title">Tier 1 
+                </h1>
             </div>
 
-            <ul class="tier-features">
+            <ul class="tier-features mark">
               <li>Support me on a monthly basis</li>
-              <li>Get Access to MRA Playlist Feature</li>
-              <li>Get Access to MRA Backup Feature (3 slots)</li>
-              <li>Get Access to Music Search System</li>
-              <li>Get Access to multi-selection actions</li>
+              <li>MRA Playlist Feature</li>
+              <li>MRA Backup Feature (3 slots)</li>
+              <li>Music Search System</li>
+              <li>Selection actions</li>
             </ul>
           </div>
           <div
             class="tier-card"
             style="
-              --color: #546aff;
-              --fg: var(--bg);
-              --darker-color: #69d8ff;
+              /* --color: #546aff;
+              --darker-color: #546aff38; */
+              --color: #facc15;
+              --darker-color: #facc1538;
+              border: 3px solid #facc15de;
+              /* --fg: var(--bg); */
+              /* --darker-color: #69d8ff;
               --normal-color: #546aff;
               --normal-darker-color: #69d8ff;
+    --hover-c1: #546aff4a;
+    --hover-c2: #546aff4a; */
             "
           >
             <div class="tier-title-holder">
@@ -537,9 +549,19 @@
                 alt="MRA Supporter Features Tier 2"
                 src="https://cdn.buymeacoffee.com/uploads/membership_level/2023/07/FtW6eAKN0PHDSrdniOzkDwBizM3TwmKyenZyDMDi.png@800w_0e.jpg"
               />
-              <h1 class="tier-title">Tier 2</h1>
+              <div class="pro-holder" style="
+              margin: 15px 0px -4px 0px;
+          ">
+                          <h1 class="tier-title" style="
+              margin: 0;
+          ">Tier 2</h1><img src="pro.svg" style="
+              width: 40px;
+              margin: 0px 0px 0px 10px;
+          ">
+          
+                        </div>
             </div>
-            <ul class="tier-features">
+            <ul class="tier-features mark">
               <li>Support me on a monthly basis</li>
               <li>Previous Tiers Rewards</li>
               <li>Get Access to MRA Backup Feature (10 slots)</li>
@@ -552,8 +574,11 @@
             class="tier-card"
             style="
               --color: #40ffa2;
-              --darker-color: #30ef9c;
-              --hover-text-color: var(--bg);
+              --darker-color: #40ffa22e;
+              /* --darker-color: #30ef9c; */
+              /* --hover-text-color: var(--bg); */
+    /* --hover-c1: #30ef9c4a;
+    --hover-c2: #30ef9c4a; */
             "
           >
             <div class="tier-title-holder">
@@ -564,7 +589,7 @@
               />
               <h1 class="tier-title">Tier 3</h1>
             </div>
-            <ul class="tier-features">
+            <ul class="tier-features mark">
               <li>Support me on a monthly basis</li>
               <li>Previous Tiers Rewards</li>
               <li>Get Access to MRA Backup Feature (30 slots)</li>
@@ -785,13 +810,13 @@
               <br></span>
           <div class="download-button">
             <span class="download-text"
-              >*Windows Installer (v0.109.0) (Latest Version):</span
+              >*Windows Installer (v0.110) (Latest Version):</span
             >
             <a
               class="button accent primary download-link icon-button stroked"
               target="_blank"
               id="download-url"
-              href="https://github.com/Jadquir/mra-files/releases/download/0.109.0/MRA_Setup.msi"
+              href="https://github.com/Jadquir/mra-files/releases/download/0.110/MRA_Setup_x64.msi"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -816,13 +841,13 @@
           </div>
           <div class="download-button">
             <span class="download-text"
-              >*Windows Zip File (v0.109.0) (Latest Version):</span
+              >*Windows Zip File (v0.110) (Latest Version):</span
             >
             <a
               class="button accent primary download-link icon-button stroked"
               target="_blank"
               id="download-url"
-              href="https://github.com/Jadquir/mra-files/releases/download/0.109.0/MRA_v01090.zip"
+              href="https://github.com/Jadquir/mra-files/releases/download/0.110/MRA_0110_x64.zip"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
