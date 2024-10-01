@@ -50,15 +50,6 @@ form .textbox input,  form .textbox textarea {
 .mra-overlay h1{
     color: var(--fg);
 }
-.custom-loader {
-    width: 52px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: conic-gradient(#0000 10%,var(--accent-lighter));
-    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
-    animation:s3 1s infinite linear;
-  }
-  @keyframes s3 {to{transform: rotate(1turn)}}
 .main-container {
     display: flex;
     justify-content: center;

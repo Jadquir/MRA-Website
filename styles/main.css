@@ -570,6 +570,16 @@ a.margin {
         --normal-darker-color: #f1f6ff3f;
     }
 }
+.custom-loader {
+    width: 52px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%,var(--accent-lighter));
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation:s3 1s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
 .tier-card:hover {
     background-color: var(--darker-color);
     transition: background-color .16s ease-in-out ,
@@ -680,4 +690,32 @@ a.margin {
 .text-yellow-400 {
     --tw-text-opacity: 1;
     color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+.download-container{
+    display:none !important;
+    pointer-events: none;
+    opacity: 0;
+}
+.download-container.loaded{
+    opacity: 1;
+    display: flex !important;
+    pointer-events: auto;
+}
+.download-overlay.loaded{
+    display:none;
+    pointer-events: none;
+    opacity: 0;
+}
+.download-overlay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.error-overlay{
+    display: none;
+    max-width: 70%;
+}
+.error-overlay.loaded{
+    display: flex;
 }
