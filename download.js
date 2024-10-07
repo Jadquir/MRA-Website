@@ -1,4 +1,4 @@
-const url = "https://get-start-vh7xzcelwq-uc.a.run.app/?type=update&app_lang=en&user_lang=en&single=1";
+const url = "https://raw.githubusercontent.com/Jadquir/mra-files/refs/heads/main/updates.json";
 function parseUpdateData(jsonData) {
     const { AutoUpdateUrl, InstallerUpdateUrl, DownloadLink, UpdateChangeLog } = jsonData;
 
