@@ -47,6 +47,10 @@
     section {
         margin-bottom: 250px !important;
     }
+
+    .tier-card{
+        height: unset !important;
+    }
 }
 
 .flex {
@@ -582,9 +586,9 @@ a.margin {
 
 .tier-card:hover {
     background-color: var(--darker-color);
-    transition: background-color .16s ease-in-out ,
-     box-shadow .1s ease;
-     box-shadow: 0px 20px 20px 0px var(--color), -1px 2px 20px 0px var(--color);
+    
+     /* box-shadow .1s ease;
+     box-shadow: 0px 20px 20px 0px var(--color), -1px 2px 20px 0px var(--color); */
     /* background: linear-gradient(180deg, var(--hover-c1), #ff958900);
     /* border: 5px; */
     /* transform: translateY(-8);
@@ -594,32 +598,23 @@ a.margin {
     /* --fg: var(--hover-text-color);  */
 }
 @media (max-width: 55em) {
-    /* .tier-card {
-        width: 42vh !important;
-    } */
-    /* .tier-card {
-        width: 300px;
-        padding: 30px 60px;
-        height: 505px;
-    } */
+   
 }
 
 @media (prefers-color-scheme: light) {
-    .tier-card {
-        /* background-color: #ffffff !important; */
-    }
-
     .developedby:hover {
         color: var(--accent) !important;
     }
 
 }.tier-card {
     width: 350px;
-    height: 560px;
+    height: 680px;
     background-color: #33343533;
     --border-op: 20%;
+    transition: background-color .16s ease-in-out ;
     border: 1px solid hsl(0deg 0% var(--border-op));    
     padding: 15px 20px;
+    padding-bottom: 40px;
     border-radius: 15px;
 }
 /* Style the tier title holder */
@@ -647,21 +642,37 @@ a.margin {
 
 /* Style the tier features list items */
 .tier-features li {
-    /* margin-bottom: 5px; */
+    margin-bottom: 5px;
     color: var(--fg);
     align-items: center;
     display: flex;
     align-content: center;
     justify-content: flex-start;
 }
+
+.feature-info ul {
+    list-style-type: disc !important;
+    }
+    .feature-info li {
+    margin-bottom: 7px;
+    display: flex;
+    flex-direction: row;    
+    align-content: flex-start;
+    align-items: flex-start;
+    }
+    .feature-info li::before {
+        content : '⭐';
+
+        margin-right: 6px;
+    }
 .tier-features.mark li:not(.x)::before {
-    /* margin-bottom: 5px; */
+    margin-top: 5px;
     content: url(../mark.svg);
     margin-right: 10px;
 }
 
 .tier-features.mark li.x::before {
-    /* margin-bottom: 5px; */
+    margin-top: 5px;
     content: url(../x.svg);
     margin-right: 10px;
 }
